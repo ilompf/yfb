@@ -1,5 +1,12 @@
 node_modules
 dist
-.tmp
-.sass-cache
+
+.*
+!.gitignore
+!.bowerrc
+!.gitattributes
+!.jshintrc
+!.editorconfig
+
 app/bower_components
+

@@ -54,7 +54,7 @@ require.config({
     }
 });
 
-require(['app', 'jquery'], function (app, $) {
+require(['app', 'jquery', 'bootstrapTooltip'], function (app, $, tooltip) {
     'use strict';
     // use app here
     console.log(app);
