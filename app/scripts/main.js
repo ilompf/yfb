@@ -12,51 +12,89 @@ require.config({
         bootstrapScrollspy: '../bower_components/sass-bootstrap/js/scrollspy',
         bootstrapTab: '../bower_components/sass-bootstrap/js/tab',
         bootstrapTooltip: '../bower_components/sass-bootstrap/js/tooltip',
-        bootstrapTransition: '../bower_components/sass-bootstrap/js/transition'
+        bootstrapTransition: '../bower_components/sass-bootstrap/js/transition',
+        handlebars: '../bower_components/handlebars/handlebars',
+        requirejs: '../bower_components/requirejs/require',
+        'sass-bootstrap': '../bower_components/sass-bootstrap/dist/js/bootstrap'
     },
     shim: {
+        handlebars: {
+            exports: 'Handlebars'
+        },
         bootstrapAffix: {
-            deps: ['jquery']
+            deps: [
+                'jquery'
+            ]
         },
         bootstrapAlert: {
-            deps: ['jquery', 'bootstrapTransition']
+            deps: [
+                'jquery',
+                'bootstrapTransition'
+            ]
         },
         bootstrapButton: {
-            deps: ['jquery']
+            deps: [
+                'jquery'
+            ]
         },
         bootstrapCarousel: {
-            deps: ['jquery', 'bootstrapTransition']
+            deps: [
+                'jquery',
+                'bootstrapTransition'
+            ]
         },
         bootstrapCollapse: {
-            deps: ['jquery', 'bootstrapTransition']
+            deps: [
+                'jquery',
+                'bootstrapTransition'
+            ]
         },
         bootstrapDropdown: {
-            deps: ['jquery']
+            deps: [
+                'jquery'
+            ]
         },
-        bootstrapModal:{
-            deps: ['jquery', 'bootstrapTransition']
+        bootstrapModal: {
+            deps: [
+                'jquery',
+                'bootstrapTransition'
+            ]
         },
         bootstrapPopover: {
-            deps: ['jquery', 'bootstrapTooltip']
+            deps: [
+                'jquery',
+                'bootstrapTooltip'
+            ]
         },
         bootstrapScrollspy: {
-            deps: ['jquery']
+            deps: [
+                'jquery'
+            ]
         },
         bootstrapTab: {
-            deps: ['jquery', 'bootstrapTransition']
+            deps: [
+                'jquery',
+                'bootstrapTransition'
+            ]
         },
         bootstrapTooltip: {
-            deps: ['jquery', 'bootstrapTransition']
+            deps: [
+                'jquery',
+                'bootstrapTransition'
+            ]
         },
         bootstrapTransition: {
-            deps: ['jquery']
+            deps: [
+                'jquery'
+            ]
         }
     }
 });
 
-require(['app', 'jquery', 'bootstrapTooltip'], function (app, $, tooltip) {
+require(['app'], function (app) {
     'use strict';
+
     // use app here
     console.log(app);
-    console.log('Running jQuery %s', $().jquery);
 });
+

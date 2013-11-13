@@ -24,223 +24,218 @@
 
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
-
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">YogaFlowBuilder.com</a>
+                    <a class="navbar-brand" href="./">YogaFlowBuilder.com</a>
                 </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">My Flows</a></li>
-                        <li><a href="#">Flow Builder</a></li>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Logout</a></li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-
+                <ul id="nav-links" class="nav navbar-nav navbar-right">
+                    <li><a href="#my-flows">My Flows</a></li>
+                    <li><a href="#flow-builder">Flow Builder</a></li>
+                    <li><a href="#help">Help</a></li>
+                    <li><a href="#logout">Logout</a></li>
+                </ul>
             </div>
         </nav>
 
-        <!-- Builder -->
-        <div class="pose-picker">
-            <div class="pose-picker-toolbar">
-                <div class="searchbox">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Name of the pose">
-                </div>
-            </div>
-
-            <ul class="pose-picker-archive">
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/HappyBaby-Pose.jpg" title="Happy Baby" />
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/Table-Pose.jpg" title="Table"/>
-                    <p>Table</p>
-                    <p>Svaasana</p>
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/Cat-Pose.jpg" title="Cat"/>
-                    <p>Cat</p>
-                    <p>Marjaryasana</p>
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/Cow-Pose.jpg" title="Cow"/>
-                    <p>Cow</p>
-                    <p>Bitilasana</p>
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/HalfBow-Pose.jpg" title="Half Bow"/>
-                    <p>Half Bow</p>
-                    <p>Ardha Dhanurasana</p>
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/SidePlank-Pose.jpg" title="Side Plank"/>
-                    <p>Side Plank</p>
-                    <p>Vasisthasana</p>
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/Dolphin-Pose.jpg" title="Dolphin"/>
-                    <p>Dolphin</p>
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/Camel-Pose.jpg" title="Camel"/>
-                    <p>Camel</p>
-                    <p>Ustrasana</p>
-                    <p>Sasangasana</p>
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/Rabbit-Pose.jpg" title="Rabbit"/>
-                    <p>Rabbit</p>
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/Hero-Pose.jpg" title="Hero"/>
-                    <p>Hero</p>
-                    <p>Virasana</p>
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/Cobra-Pose.jpg" title="Cobra"/>
-                    <p>Cobra</p>
-                    <p>Bhujangasana</p>
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/Sphinx-Pose.jpg" title="Sphinx"/>
-                    <p>Sphinx</p>
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/Fish-Pose.jpg" title="Fish"/>
-                    <p>Fish</p>
-                    <p>Matsyasana</p>
-                </li>
-
-                <li>
-                    <img src="http://truestar.com/yoga/jpg-big/Bridge-Pose.jpg" title="Bridge"/>
-                    <p>Bridge</p>
-                    <p>Setu Bandha Sarvangasana</p>
-                </li>
-
-            </ul>
-        </div>
-
-        <div class="canvas">
-            <div class="page">
-                <!--
-                <div class="page-header">
-                    <h1>Jungle Flow! <small>The flow for very passionate yogis in pijamas!</small></h1>
-                </div>
-                -->
-
-                <div class="empty-section">
-                    <h2><span class="glyphicon glyphicon-save"></span> Drag poses here!</h3>
-                </div>
-            </div>
-
-            <div class="page-toolbar">
-                <button class="btn btn-success">Create New Section</button>
-            </div>
-        </div>
-
-
-        <!-- Flow list
-        <div class="container">
-            <div class="toolbar">
-                <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Create a New Flow</button>
-            </div>
-
-            <div class="aflow">
-                <h2 class="aflow-name"><span>Jungle Flow</span></h2>
-                <div class="aflow-description">
-                    <h2>Description</h2>
-                    <p>This flow is designed for especially enthusiastic yogis in pijamas!</p>
-
-                    <div class="aflow-tools">
-                        <button type="button" class="btn btn-default">Edit</button>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-print"></i></button>
-                            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-share-alt"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <ul class="aflow-preview">
-                    <li><img src="http://truestar.com/yoga/jpg-big/HappyBaby-Pose.jpg" alt="very representative picture"> </li>
-                    <li><img src="http://truestar.com/yoga/jpg-big/Fish-Pose.jpg" alt="very representative picture"> </li>
-                    <li><img src="http://truestar.com/yoga/jpg-big/Bridge-Pose.jpg" alt="very representative picture"> </li>
-                    <li><img src="http://truestar.com/yoga/jpg-big/Sphinx-Pose.jpg" alt="very representative picture"> </li>
-                </ul>
-            </div>
-
-            <div class="aflow">
-                <h2 class="aflow-name"><span>Rejuvenating Detox Flow</span></h2>
-                <div class="aflow-description">
-                    <h2>Description</h2>
-                    <p>This flow is designed for especially enthusiastic yogis in pijamas!</p>
-
-                    <div class="aflow-tools">
-                        <button type="button" class="btn btn-default">Edit</button>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-print"></i></button>
-                            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-share-alt"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <ul class="aflow-preview">
-                    <li><img src="http://truestar.com/yoga/jpg-big/HappyBaby-Pose.jpg" alt="very representative picture"> </li>
-                    <li><img src="http://truestar.com/yoga/jpg-big/Fish-Pose.jpg" alt="very representative picture"> </li>
-                    <li><img src="http://truestar.com/yoga/jpg-big/Bridge-Pose.jpg" alt="very representative picture"> </li>
-                    <li><img src="http://truestar.com/yoga/jpg-big/Sphinx-Pose.jpg" alt="very representative picture"> </li>
-                </ul>
-            </div>
-
-            <div class="aflow">
-                <h2 class="aflow-name"><span>Winter Warmup</span></h2>
-                <div class="aflow-description">
-                    <h2>Description</h2>
-                    <p>This flow is designed for especially enthusiastic yogis in pijamas!</p>
-
-                    <div class="aflow-tools">
-                        <button type="button" class="btn btn-default">Edit</button>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-print"></i></button>
-                            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-share-alt"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <ul class="aflow-preview">
-                    <li><img src="http://truestar.com/yoga/jpg-big/HappyBaby-Pose.jpg" alt="very representative picture"> </li>
-                    <li><img src="http://truestar.com/yoga/jpg-big/Fish-Pose.jpg" alt="very representative picture"> </li>
-                    <li><img src="http://truestar.com/yoga/jpg-big/Bridge-Pose.jpg" alt="very representative picture"> </li>
-                    <li><img src="http://truestar.com/yoga/jpg-big/Sphinx-Pose.jpg" alt="very representative picture"> </li>
-                </ul>
-            </div>
-        </div>
-        -->
+        <!-- here goes the content -->
+        <div id="page"></div>
+        <!-- /here goes the content -->
 
         <footer>
             <p>Copyright &copy; 2013 by Ilona Corp. All rights reserved.</p>
         </footer>
+
+
+<!-- templates -->
+<script id="my-flows" type="text/x-handlebars-template">
+    <div class="container">
+        <div class="toolbar">
+            <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Create a New Flow</button>
+        </div>
+
+        <div class="aflow">
+            <h2 class="aflow-name"><span>Jungle Flow</span></h2>
+            <div class="aflow-description">
+                <h2>Description</h2>
+                <p>This flow is designed for especially enthusiastic yogis in pijamas!</p>
+
+                <div class="aflow-tools">
+                    <button type="button" class="btn btn-default">Edit</button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-print"></i></button>
+                        <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-share-alt"></i></button>
+                        <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+                    </div>
+                </div>
+            </div>
+            <ul class="aflow-preview">
+                <li><img src="http://truestar.com/yoga/jpg-big/HappyBaby-Pose.jpg" alt="very representative picture"> </li>
+                <li><img src="http://truestar.com/yoga/jpg-big/Fish-Pose.jpg" alt="very representative picture"> </li>
+                <li><img src="http://truestar.com/yoga/jpg-big/Bridge-Pose.jpg" alt="very representative picture"> </li>
+                <li><img src="http://truestar.com/yoga/jpg-big/Sphinx-Pose.jpg" alt="very representative picture"> </li>
+            </ul>
+        </div>
+
+        <div class="aflow">
+            <h2 class="aflow-name"><span>Rejuvenating Detox Flow</span></h2>
+            <div class="aflow-description">
+                <h2>Description</h2>
+                <p>This flow is designed for especially enthusiastic yogis in pijamas!</p>
+
+                <div class="aflow-tools">
+                    <button type="button" class="btn btn-default">Edit</button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-print"></i></button>
+                        <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-share-alt"></i></button>
+                        <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+                    </div>
+                </div>
+            </div>
+            <ul class="aflow-preview">
+                <li><img src="http://truestar.com/yoga/jpg-big/HappyBaby-Pose.jpg" alt="very representative picture"> </li>
+                <li><img src="http://truestar.com/yoga/jpg-big/Fish-Pose.jpg" alt="very representative picture"> </li>
+                <li><img src="http://truestar.com/yoga/jpg-big/Bridge-Pose.jpg" alt="very representative picture"> </li>
+                <li><img src="http://truestar.com/yoga/jpg-big/Sphinx-Pose.jpg" alt="very representative picture"> </li>
+            </ul>
+        </div>
+
+        <div class="aflow">
+            <h2 class="aflow-name"><span>Winter Warmup</span></h2>
+            <div class="aflow-description">
+                <h2>Description</h2>
+                <p>This flow is designed for especially enthusiastic yogis in pijamas!</p>
+
+                <div class="aflow-tools">
+                    <button type="button" class="btn btn-default">Edit</button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-print"></i></button>
+                        <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-share-alt"></i></button>
+                        <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+                    </div>
+                </div>
+            </div>
+            <ul class="aflow-preview">
+                <li><img src="http://truestar.com/yoga/jpg-big/HappyBaby-Pose.jpg" alt="very representative picture"> </li>
+                <li><img src="http://truestar.com/yoga/jpg-big/Fish-Pose.jpg" alt="very representative picture"> </li>
+                <li><img src="http://truestar.com/yoga/jpg-big/Bridge-Pose.jpg" alt="very representative picture"> </li>
+                <li><img src="http://truestar.com/yoga/jpg-big/Sphinx-Pose.jpg" alt="very representative picture"> </li>
+            </ul>
+        </div>
+    </div>
+</script>
+
+<script id="flow-builder" type="text/x-handlebars-template">
+    <div class="pose-picker">
+        <div class="pose-picker-toolbar">
+            <div class="searchbox">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                <input type="text" class="form-control" placeholder="Name of the pose">
+            </div>
+        </div>
+
+        <ul class="pose-picker-archive">
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/HappyBaby-Pose.jpg" title="Happy Baby" />
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/Table-Pose.jpg" title="Table"/>
+                <p>Table</p>
+                <p>Svaasana</p>
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/Cat-Pose.jpg" title="Cat"/>
+                <p>Cat</p>
+                <p>Marjaryasana</p>
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/Cow-Pose.jpg" title="Cow"/>
+                <p>Cow</p>
+                <p>Bitilasana</p>
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/HalfBow-Pose.jpg" title="Half Bow"/>
+                <p>Half Bow</p>
+                <p>Ardha Dhanurasana</p>
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/SidePlank-Pose.jpg" title="Side Plank"/>
+                <p>Side Plank</p>
+                <p>Vasisthasana</p>
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/Dolphin-Pose.jpg" title="Dolphin"/>
+                <p>Dolphin</p>
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/Camel-Pose.jpg" title="Camel"/>
+                <p>Camel</p>
+                <p>Ustrasana</p>
+                <p>Sasangasana</p>
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/Rabbit-Pose.jpg" title="Rabbit"/>
+                <p>Rabbit</p>
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/Hero-Pose.jpg" title="Hero"/>
+                <p>Hero</p>
+                <p>Virasana</p>
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/Cobra-Pose.jpg" title="Cobra"/>
+                <p>Cobra</p>
+                <p>Bhujangasana</p>
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/Sphinx-Pose.jpg" title="Sphinx"/>
+                <p>Sphinx</p>
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/Fish-Pose.jpg" title="Fish"/>
+                <p>Fish</p>
+                <p>Matsyasana</p>
+            </li>
+
+            <li>
+                <img src="http://truestar.com/yoga/jpg-big/Bridge-Pose.jpg" title="Bridge"/>
+                <p>Bridge</p>
+                <p>Setu Bandha Sarvangasana</p>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="canvas">
+        <div class="page">
+            <!--
+            <div class="page-header">
+                <h1>Jungle Flow! <small>The flow for very passionate yogis in pijamas!</small></h1>
+            </div>
+            -->
+
+            <div class="empty-section">
+                <h2><span class="glyphicon glyphicon-save"></span> Drag poses here!</h3>
+            </div>
+        </div>
+
+        <div class="page-toolbar">
+            <button class="btn btn-success">Create New Section</button>
+        </div>
+    </div>
+</script>
+<!-- /templates -->
 
 
         <!-- build:js scripts/vendor.js -->
