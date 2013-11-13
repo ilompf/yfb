@@ -15,7 +15,8 @@ require.config({
         bootstrapTransition: '../bower_components/sass-bootstrap/js/transition',
         handlebars: '../bower_components/handlebars/handlebars',
         requirejs: '../bower_components/requirejs/require',
-        'sass-bootstrap': '../bower_components/sass-bootstrap/dist/js/bootstrap'
+        'sass-bootstrap': '../bower_components/sass-bootstrap/dist/js/bootstrap',
+        'jquery-ui': '../bower_components/jquery-ui/ui/jquery-ui'
     },
     shim: {
         handlebars: {

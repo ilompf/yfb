@@ -156,7 +156,7 @@ nav {
     }
 }
 
-.canvas {
+#content {
     @include clearfix();
 }
 
@@ -176,11 +176,21 @@ nav {
 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.03);
 
-    .empty-section {
-        padding: 20px;
-        border: 3px dashed #ccc;
-        @extend .text-center;
-        color: #ccc;
+    .section {
+        @extend .list-unstyled;
+        @extend .list-inline;
+
+        &.empty {
+            @extend .text-center;
+            padding: 20px;
+            color: #ccc;
+            border: 3px dashed #ccc;
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+        }
     }
 }
 
@@ -196,5 +206,11 @@ footer {
     @extend .text-center;
     color: #666;
     padding: 10px;
+}
+
+/* draggables and sortables always have to be on top */
+.ui-draggable-dragging,
+.ui-sortable-helper {
+    z-index: 9999;
 }
 

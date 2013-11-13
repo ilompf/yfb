@@ -1,5 +1,5 @@
 /*global define */
-define(['jquery', 'handlebars'], function ($, Handlebars) {
+define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
     'use strict';
 
     function renderTemplate(template, context) {
@@ -12,6 +12,22 @@ define(['jquery', 'handlebars'], function ($, Handlebars) {
         $(destId).html(template);
     }
 
+    function bindAll() {
+        $('.section').sortable({
+            stop: function (event, ui) {
+                ui.item.removeClass('ui-draggable');
+                $('p', ui.item).remove();
+                $(event.target).removeClass('empty');
+                $('h2', event.target).hide();
+            }
+        });
+        $('.pose-picker-archive li').draggable({
+            connectToSortable: $('.section'),
+            helper: 'clone',
+            revert: 'invalid'
+        }).disableSelection();
+    }
+
     $('#nav-links').on({
         'click': function (event) {
             var $target = $( event.currentTarget ),
@@ -20,13 +36,16 @@ define(['jquery', 'handlebars'], function ($, Handlebars) {
             event.preventDefault();
             $target.parent().addClass('active').siblings().removeClass('active');
 
-            render(alink, '#page', {});
+            render(alink, '#content', {});
+            bindAll();
+
             return false;
         }
     }, 'a');
 
     // default template
-    render('#my-flows', '#page', {});
+    render('#my-flows', '#content', {});
+    bindAll();
 
     return 'App is on!';
 
