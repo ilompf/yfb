@@ -2,26 +2,31 @@
 define(['jquery', 'handlebars'], function ($, Handlebars) {
     'use strict';
 
-    function render(template, context) {
+    function renderTemplate(template, context) {
         var Template = Handlebars.compile(template);
         return Template(context);
     }
 
-    $('#nav-link').on({
+    function render(srcId, destId, context) {
+        var template = renderTemplate($(srcId).html(), context);
+        $(destId).html(template);
+    }
+
+    $('#nav-links').on({
         'click': function (event) {
             var $target = $( event.currentTarget ),
-                alink = $target.attr('href'),
-                template;
+                alink = $target.attr('href');
 
             event.preventDefault();
             $target.parent().addClass('active').siblings().removeClass('active');
 
-            template = render($(alink).html(), {});
-            $('#page').html(template);
-
+            render(alink, '#page', {});
             return false;
         }
     }, 'a');
+
+    // default template
+    render('#my-flows', '#page', {});
 
     return 'App is on!';
 
