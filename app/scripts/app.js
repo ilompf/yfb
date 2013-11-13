@@ -14,13 +14,19 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
 
     function bindAll() {
         $('.section').sortable({
-            stop: function (event, ui) {
-                ui.item.removeClass('ui-draggable');
-                $('p', ui.item).remove();
-                $(event.target).removeClass('empty');
+            over: function (event, ui) {
                 $('h2', event.target).hide();
+            },
+            out: function (even, ui) {
+                $('h2', event.target).show();
+            },
+            stop: function (event, ui) {
+                $(event.target).removeClass('empty');
+                ui.item.removeClass('ui-draggable');
+                $('h2', event.target).hide();
+                $('p', ui.item).hide();
             }
-        });
+        }).disableSelection();
         $('.pose-picker-archive li').draggable({
             connectToSortable: $('.section'),
             helper: 'clone',

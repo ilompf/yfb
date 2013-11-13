@@ -40,10 +40,9 @@ nav {
     .aflow-name {
         position: absolute;
         display: block;
-        z-index: 9999;
+        z-index: 1000;
 
         margin: 0;
-        width: 480px;
         opacity: 0.8;
         font-size: 18px;
         line-height: 120px;
@@ -167,7 +166,7 @@ nav {
     margin-top: 30px;
 
     // simulate page look
-    overflow: hidden;
+    overflow: visible;
     padding: 20px;
     border-width: 1px;
     border-style: solid;
@@ -217,6 +216,6 @@ footer {
 /* draggables and sortables always have to be on top */
 .ui-draggable-dragging,
 .ui-sortable-helper {
-    z-index: 9999;
+    z-index: 1000;
 }
 
