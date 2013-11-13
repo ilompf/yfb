@@ -2,15 +2,12 @@
 define(['jquery', 'handlebars'], function ($, Handlebars) {
     'use strict';
 
-    var nav = $('#nav-links');
-
     function render(template, context) {
         var Template = Handlebars.compile(template);
         return Template(context);
     }
 
-    // manage navigation events
-    nav.on({
+    $('#nav-link').on({
         'click': function (event) {
             var $target = $( event.currentTarget ),
                 alink = $target.attr('href'),
@@ -25,6 +22,8 @@ define(['jquery', 'handlebars'], function ($, Handlebars) {
             return false;
         }
     }, 'a');
+
+    return 'App is on!';
 
 });
 
