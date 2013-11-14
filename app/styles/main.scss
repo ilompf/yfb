@@ -159,11 +159,16 @@ nav {
     @include clearfix();
 }
 
-.page {
+.section {
     @include make-md-column(10);
     @include make-md-column-offset(1);
 
-    margin-top: 30px;
+    @extend .list-unstyled;
+    @extend .list-inline;
+
+    min-height: 150px;
+    margin-top: 20px;
+    /*margin-bottom: 20px;*/
 
     // simulate page look
     overflow: visible;
@@ -175,30 +180,32 @@ nav {
 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.03);
 
-    .section {
-        @extend .list-unstyled;
-        @extend .list-inline;
+    &:first-child {
+        margin-top: 30px;
+    }
 
-        margin-bottom: 20px;
-        border: 3px solid #ccc;
+    &.empty {
+        @extend .text-center;
+        color: #ccc;
 
-        &.empty {
-            @extend .text-center;
-            padding: 20px;
-            color: #ccc;
-            border: 3px dashed #ccc;
+        h2.drop-here-prompt {
+            margin: 0;
+            padding: 0;
+            line-height: 140px;
         }
+    }
 
-        li {
-            margin-right: 15px;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
+    li {
+        margin: 10px 7px;
 
-        img {
-            width: 120px;
-            height: 120px;
+        &.sortable-placeholder {
+            background-color: #ccc;
         }
+    }
+
+    img {
+        width: 120px;
+        height: 120px;
     }
 }
 
@@ -220,11 +227,5 @@ footer {
 .ui-draggable-dragging,
 .ui-sortable-helper {
     z-index: 1000;
-}
-
-.sortable-placeholder {
-    /*margin: 0;*/
-    /*padding: 0;*/
-    background-color: #ccc;
 }
 

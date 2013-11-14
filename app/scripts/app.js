@@ -13,36 +13,60 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
     }
 
     function createSection() {
-        var section = $('#empty-section').html();
-        $('.page').append(section);
     }
 
     function bindAll() {
-        $('.page').sortable({
-            items: '>ul'
+        $('.canvas').sortable({
+            items: '>ul',
+            axis: 'y',
+            placeholder: 'sortable-placeholder',
+            forcePlaceholderSize: true,
+            cursor: 'move'
         }).disableSelection();
 
         $('.section').sortable({
             items: '>li',
             placeholder: 'sortable-placeholder',
-            appendTo: document.body,
+            forcePlaceholderSize: true,
             connectWith: '.section',
+            cursor: 'move',
+            //grid: [140, 140],
             over: function (event, ui) {
-                $('h2', event.target).hide();
+                var $prompt = $('.drop-here-prompt', this);
+                if ($prompt.is(':visible')) $prompt.hide();
             },
             out: function (event, ui) {
-                $('h2', event.target).show();
+                //var $section = $(this),
+                    //$prompt = $('.drop-here-prompt', this);
+                //if ($prompt.not(':visible') && $section.children('li').length <= 2) {
+                    //$section.addClass('empty');
+                    //$prompt.show();
+                //}
             },
             stop: function (event, ui) {
-                $(event.target).removeClass('empty');
-                ui.item.removeClass('ui-draggable');
-                $('h2', event.target).hide();
+                var $section = $(this);
+                if ($section.children('li').length <= 2) {
+                    $section.removeClass('empty');
+                    $('.drop-here-prompt', $section).hide();
+                }
                 $('p', ui.item).hide();
+            },
+            receive: function (event, ui) {
+                var $prompt = $('.drop-here-prompt', this);
+                if ($prompt.is(':visible')) $prompt.hide();
+            },
+            remove: function (event, ui) {
+                var $section = $(this),
+                    $prompt = $('.drop-here-prompt', this);
+                if ($prompt.not(':visible') && $section.children('li').length <= 2) {
+                    $section.addClass('empty');
+                    $prompt.show();
+                }
             }
         }).disableSelection();
 
         $('.pose-picker-archive li').draggable({
-            connectToSortable: $('.section'),
+            connectToSortable: '.section',
             helper: 'clone',
             revert: 'invalid'
         }).disableSelection();
@@ -78,10 +102,11 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
 
         $('.page-toolbar').on({
             'click': function (event) {
+                var section = $('#empty-section').html();
                 event.preventDefault();
-                createSection();
+                $(section).insertBefore($(this).parent());
                 bindAll();
-                return False;
+                return false;
             }
         }, 'a');
     }
