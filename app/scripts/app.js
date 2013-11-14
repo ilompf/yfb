@@ -14,6 +14,7 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
 
     function bindAll() {
         $('.section').sortable({
+            placeholder: 'sortable-placeholder',
             over: function (event, ui) {
                 $('h2', event.target).hide();
             },
@@ -27,27 +28,42 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
                 $('p', ui.item).hide();
             }
         }).disableSelection();
+
         $('.pose-picker-archive li').draggable({
             connectToSortable: $('.section'),
             helper: 'clone',
             revert: 'invalid'
         }).disableSelection();
+
+        $('#nav-links').on({
+            'click': function (event) {
+                var $target = $( event.currentTarget ),
+                    alink = $target.attr('href');
+
+                event.preventDefault();
+                $target.parent().addClass('active').siblings().removeClass('active');
+
+                render(alink, '#content', {});
+                bindAll();
+
+                return false;
+            }
+        }, 'a');
+
+        $('.aflow-tools').on({
+            'click': function (event) {
+                var $target = $( event.currentTarget ),
+                    alink = $target.attr('href');
+
+                event.preventDefault();
+
+                render(alink, '#content', {});
+                bindAll();
+
+                return false;
+            }
+        }, 'a');
     }
-
-    $('#nav-links').on({
-        'click': function (event) {
-            var $target = $( event.currentTarget ),
-                alink = $target.attr('href');
-
-            event.preventDefault();
-            $target.parent().addClass('active').siblings().removeClass('active');
-
-            render(alink, '#content', {});
-            bindAll();
-
-            return false;
-        }
-    }, 'a');
 
     // default template
     render('#my-flows', '#content', {});

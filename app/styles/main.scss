@@ -40,8 +40,8 @@ nav {
     .aflow-name {
         position: absolute;
         display: block;
-        z-index: 1000;
-
+        width: 480px;
+        z-index: 9999;
         margin: 0;
         opacity: 0.8;
         font-size: 18px;
@@ -218,4 +218,10 @@ footer {
 .ui-sortable-helper {
     z-index: 1000;
 }
+
+/*.sortable-placeholder {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*background-color: #ccc;*/
+/*}*/
 
