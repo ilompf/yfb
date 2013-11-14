@@ -12,13 +12,25 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
         $(destId).html(template);
     }
 
+    function createSection() {
+        var section = $('#empty-section').html();
+        $('.page').append(section);
+    }
+
     function bindAll() {
+        $('.page').sortable({
+            items: '>ul'
+        }).disableSelection();
+
         $('.section').sortable({
+            items: '>li',
             placeholder: 'sortable-placeholder',
+            appendTo: document.body,
+            connectWith: '.section',
             over: function (event, ui) {
                 $('h2', event.target).hide();
             },
-            out: function (even, ui) {
+            out: function (event, ui) {
                 $('h2', event.target).show();
             },
             stop: function (event, ui) {
@@ -61,6 +73,15 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
                 bindAll();
 
                 return false;
+            }
+        }, 'a');
+
+        $('.page-toolbar').on({
+            'click': function (event) {
+                event.preventDefault();
+                createSection();
+                bindAll();
+                return False;
             }
         }, 'a');
     }
