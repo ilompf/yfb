@@ -24,11 +24,11 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
             cursor: 'move'
         }).disableSelection();
 
-        $('.section').sortable({
+        $('.pose-list').sortable({
             items: '>li',
             placeholder: 'sortable-placeholder',
             forcePlaceholderSize: true,
-            connectWith: '.section',
+            connectWith: '.pose-list',
             cursor: 'move',
             //grid: [140, 140],
             over: function (event, ui) {
@@ -66,7 +66,7 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
         }).disableSelection();
 
         $('.pose-picker-archive li').draggable({
-            connectToSortable: '.section',
+            connectToSortable: '.pose-list',
             helper: 'clone',
             revert: 'invalid'
         }).disableSelection();

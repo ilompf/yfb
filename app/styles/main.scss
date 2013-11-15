@@ -163,16 +163,13 @@ nav {
     @include make-md-column(10);
     @include make-md-column-offset(1);
 
-    @extend .list-unstyled;
-    @extend .list-inline;
-
     min-height: 150px;
-    margin-top: 20px;
-    /*margin-bottom: 20px;*/
+
+    margin: 20px 0 0 0;
+    padding: 0;
 
     // simulate page look
     overflow: visible;
-    padding: 20px;
     border-width: 1px;
     border-style: solid;
     border-color: #959595;
@@ -184,28 +181,53 @@ nav {
         margin-top: 30px;
     }
 
-    &.empty {
-        @extend .text-center;
-        color: #ccc;
+    .pose-list {
+        @extend .list-unstyled;
+        @extend .list-inline;
 
-        h2.drop-here-prompt {
-            margin: 0;
-            padding: 0;
-            line-height: 140px;
+        padding: 20px;
+
+        &.empty {
+            @extend .text-center;
+            color: #ccc;
+
+            h2.drop-here-prompt {
+                margin: 0;
+                padding: 0;
+                line-height: 140px;
+            }
+        }
+
+        li {
+            margin: 10px 7px;
+
+            &.sortable-placeholder {
+                background-color: #ccc;
+            }
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
         }
     }
 
-    li {
-        margin: 10px 7px;
+    .section-toolbar {
+        @include clearfix();
+        @extend .text-right;
 
-        &.sortable-placeholder {
-            background-color: #ccc;
+        padding: 10px;
+        margin: 0;
+
+        background-color: #ccc;
+
+        .section-title {
+            @extend .pull-left;
         }
-    }
 
-    img {
-        width: 120px;
-        height: 120px;
+        .section-options {
+            @extend .pull-right;
+        }
     }
 }
 
@@ -215,6 +237,8 @@ nav {
 
     @extend .well;
     @extend .well-sm;
+
+    margin-top: 20px;
 }
 
 footer {
