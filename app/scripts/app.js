@@ -12,9 +12,6 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
         $(destId).html(template);
     }
 
-    function createSection() {
-    }
-
     function bindAll() {
         $('.canvas').sortable({
             items: '>ul',
@@ -65,50 +62,44 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
             }
         }).disableSelection();
 
+        $('.aflow-tools').on({
+            'click': function (event) {
+                var $target = $( event.currentTarget ),
+                    alink = $target.attr('href');
+                event.preventDefault();
+                render(alink, '#content', {});
+                bindAll();
+                return false;
+            }
+        }, 'a');
+
+        $('#nav-links').on({
+            'click': function (event) {
+                var $target = $( event.currentTarget ),
+                    alink = $target.attr('href');
+                event.preventDefault();
+                $target.parent().addClass('active').siblings().removeClass('active');
+                render(alink, '#content', {});
+                bindAll();
+                return false;
+            }
+        }, 'a');
+
         $('.pose-picker-archive li').draggable({
             connectToSortable: '.pose-list',
             helper: 'clone',
             revert: 'invalid'
         }).disableSelection();
 
-        $('#nav-links').on({
-            'click': function (event) {
-                var $target = $( event.currentTarget ),
-                    alink = $target.attr('href');
-
-                event.preventDefault();
-                $target.parent().addClass('active').siblings().removeClass('active');
-
-                render(alink, '#content', {});
-                bindAll();
-
-                return false;
-            }
-        }, 'a');
-
-        $('.aflow-tools').on({
-            'click': function (event) {
-                var $target = $( event.currentTarget ),
-                    alink = $target.attr('href');
-
-                event.preventDefault();
-
-                render(alink, '#content', {});
-                bindAll();
-
-                return false;
-            }
-        }, 'a');
-
         $('.page-toolbar').on({
             'click': function (event) {
                 var section = $('#empty-section').html();
-                event.preventDefault();
                 $(section).insertBefore($(this).parent());
                 bindAll();
                 return false;
             }
-        }, 'a');
+        }, 'button');
+
     }
 
     // default template
