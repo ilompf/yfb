@@ -2,6 +2,15 @@
 define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
     'use strict';
 
+    // little plugin to get nested parents
+    $.fn.getParent = function (num) {
+        var last = this[0];
+        for (var i = 0; i < num; i++) {
+            last = last.parentNode;
+        }
+        return $(last);
+    }
+
     function renderTemplate(template, context) {
         var Template = Handlebars.compile(template);
         return Template(context);
@@ -20,6 +29,14 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
             forcePlaceholderSize: true,
             cursor: 'move'
         }).disableSelection();
+
+        $('.canvas').on({
+            click: function (event) {
+                console.log(event);
+                $(event.currentTarget).getParent(3).remove();
+                return false;
+            }
+        }, '.section-options a');
 
         $('.pose-list').sortable({
             items: '>li',
