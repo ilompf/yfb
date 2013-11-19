@@ -1,5 +1,5 @@
 /*global define */
-define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
+define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch'], function ($, ui, Handlebars, quicksearch) {
     'use strict';
 
     // little plugin to get nested parents
@@ -22,6 +22,8 @@ define(['jquery', 'jquery-ui', 'handlebars'], function ($, ui, Handlebars) {
     }
 
     function bindAll() {
+        $( '.searchbox input' ).quicksearch( '.pose-picker-archive li' );
+
         $('.canvas').sortable({
             items: '>ul',
             axis: 'y',
