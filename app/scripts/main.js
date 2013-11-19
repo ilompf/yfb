@@ -16,7 +16,8 @@ require.config({
         handlebars: '../bower_components/handlebars/handlebars',
         requirejs: '../bower_components/requirejs/require',
         'sass-bootstrap': '../bower_components/sass-bootstrap/dist/js/bootstrap',
-        'jquery-ui': '../bower_components/jquery-ui/ui/jquery-ui'
+        'jquery-ui': '../bower_components/jquery-ui/ui/jquery-ui',
+        quicksearch: '../bower_components/quicksearch/jquery.quicksearch'
     },
     shim: {
         handlebars: {
