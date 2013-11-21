@@ -25,8 +25,9 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch'], function ($, ui, Ha
         $( '.searchbox input' ).quicksearch( '.pose-picker-archive li' );
 
         $('.canvas').sortable({
-            items: '>ul',
+            items: '>div',
             axis: 'y',
+            handle:'.section-toolbar' ,
             placeholder: 'sortable-placeholder',
             forcePlaceholderSize: true,
             cursor: 'move'
