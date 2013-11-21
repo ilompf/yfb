@@ -23,6 +23,11 @@ require.config({
         handlebars: {
             exports: 'Handlebars'
         },
+        quicksearch: {
+            deps: [
+                'jquery'
+            ]
+        },
         bootstrapAffix: {
             deps: [
                 'jquery'
