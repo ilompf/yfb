@@ -34,7 +34,6 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch'], function ($, ui, Ha
 
         $('.canvas').on({
             click: function (event) {
-                console.log(event);
                 $(event.currentTarget).getParent(3).remove();
                 return false;
             }
@@ -46,7 +45,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch'], function ($, ui, Ha
             forcePlaceholderSize: true,
             connectWith: '.pose-list',
             cursor: 'move',
-            //grid: [140, 140],
+            tolerance: 'pointer',
             over: function (event, ui) {
                 var $prompt = $('.drop-here-prompt', this);
                 if ($prompt.is(':visible')) $prompt.hide();
@@ -65,7 +64,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch'], function ($, ui, Ha
                     $section.removeClass('empty');
                     $('.drop-here-prompt', $section).hide();
                 }
-                $('p', ui.item).hide();
+                //$('p', ui.item).hide();
             },
             receive: function (event, ui) {
                 var $prompt = $('.drop-here-prompt', this);
