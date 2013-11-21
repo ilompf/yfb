@@ -203,10 +203,6 @@ nav {
             width: 120px;
             height: 120px;
             overflow: hidden;
-
-            &.sortable-placeholder {
-                border: 2px dashed #ccc;
-            }
         }
 
         img {
@@ -256,3 +252,6 @@ footer {
     z-index: 1000;
 }
 
+.sortable-placeholder {
+    border: 2px dashed #ccc;
+}
