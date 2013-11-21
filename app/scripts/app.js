@@ -52,12 +52,6 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch'], function ($, ui, Ha
                 if ($prompt.is(':visible')) $prompt.hide();
             },
             out: function (event, ui) {
-                //var $section = $(this),
-                    //$prompt = $('.drop-here-prompt', this);
-                //if ($prompt.not(':visible') && $section.children('li').length <= 2) {
-                    //$section.addClass('empty');
-                    //$prompt.show();
-                //}
             },
             stop: function (event, ui) {
                 var $section = $(this);
@@ -65,7 +59,6 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch'], function ($, ui, Ha
                     $section.removeClass('empty');
                     $('.drop-here-prompt', $section).hide();
                 }
-                //$('p', ui.item).hide();
             },
             receive: function (event, ui) {
                 var $prompt = $('.drop-here-prompt', this);
@@ -114,7 +107,6 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch'], function ($, ui, Ha
             'click': function (event) {
                 var section = $('#empty-section').html();
                 $(section).insertBefore($(this).parent());
-                bindAll();
                 return false;
             }
         }, 'button');
