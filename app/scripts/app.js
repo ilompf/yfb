@@ -52,19 +52,29 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
             cursor: 'move',
             tolerance: 'pointer',
             over: function (event, ui) {
-                var $prompt = $('.drop-here-prompt', this);
-                if ($prompt.is(':visible')) {
+                var $this = $(this),
+                    $prompt = $('.drop-here-prompt', this);
+                if ($this.children('li').length <= 2) {
                     $prompt.hide();
                 }
             },
-            out: function (event, ui) {
-                var $prompt = $('.drop-here-prompt', this);
-                if ($prompt.not(':visible') && $(this).siblings('li').length == 0) {
-                    $prompt.show();
+            receive: function (event, ui) {
+                var $this = $(this),
+                    $prompt = $('.drop-here-prompt', this);
+                if ($this.children('li').length <= 1) {
+                    $prompt.hide();
                 }
             },
+            remove: function (event, ui) {
+                var $this = $(this),
+                    $prompt = $('.drop-here-prompt', this);
+                if ($this.children('li').length === 0) {
+                    $prompt.show();
+                }
+            }
         }).disableSelection();
     }
+
 
     function initBuilder() {
         // add a default section
@@ -72,7 +82,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
 
         // make sections sortable
         $('.canvas').sortable({
-            items: '>div',
+            items: '>div.section',
             axis: 'y',
             placeholder: 'sortable-placeholder',
             forcePlaceholderSize: true,
