@@ -82,8 +82,8 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
         // remove sections
         $('.canvas').on({
             click: function (event) {
+                event.preventDefault();
                 $(event.currentTarget).getParent(3).remove();
-                return false;
             }
         }, '.section-options a');
 
@@ -92,11 +92,11 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
         // Handle page toolbar events
         $('.page-toolbar').on({
             'click': function (event) {
+                event.preventDefault();
                 $($('#empty-section').html()).insertBefore($(this).parent());
                 initPosesSectionsDragDrop();
-                return false;
             }
-        }, 'button');
+        }, 'a');
 
         // misc
         $('.searchbox input').quicksearch('.pose-picker-archive li');
@@ -109,11 +109,10 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
         // flow tools
         $flowTools.on({
             'click': function (event) {
+                event.preventDefault();
                 var $target = $(event.currentTarget),
                     alink = $target.attr('href');
-                event.preventDefault();
                 render(alink, '#content', {});
-                return false;
             }
         }, 'a');
 
@@ -127,7 +126,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
         // Navigation events
         $nav.on({
             'click': function (event) {
-                var $target = $( event.currentTarget ),
+                var $target = $(event.currentTarget),
                     alink = $target.attr('href');
                 event.preventDefault();
                 $target.parent().addClass('active').siblings().removeClass('active');
@@ -137,7 +136,6 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
                 } else {
                     initIndex();
                 }
-                return false;
             }
         }, 'a');
     }
