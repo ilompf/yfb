@@ -110,6 +110,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
                 var $target = $(event.currentTarget),
                     alink = $target.attr('href');
                 render(alink, '#content', {});
+                initBuilder();
             }
         }, 'a');
 
