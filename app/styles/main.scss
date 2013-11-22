@@ -186,14 +186,15 @@ nav {
     .pose-list {
         @extend .list-unstyled;
         @extend .list-inline;
+        @extend .text-left;
 
         padding: 20px;
 
         &.empty {
-            @extend .text-center;
             color: #ccc;
 
             h2.drop-here-prompt {
+                @extend .text-center;
                 margin: 0;
                 padding: 0;
                 line-height: 140px;
