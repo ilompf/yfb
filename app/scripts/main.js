@@ -17,13 +17,19 @@ require.config({
         requirejs: '../bower_components/requirejs/require',
         'sass-bootstrap': '../bower_components/sass-bootstrap/dist/js/bootstrap',
         'jquery-ui': '../bower_components/jquery-ui/ui/jquery-ui',
-        quicksearch: '../bower_components/quicksearch/jquery.quicksearch'
+        quicksearch: '../bower_components/quicksearch/jquery.quicksearch',
+        jeditable: '../bower_components/jquery_jeditable/jquery.jeditable'
     },
     shim: {
         handlebars: {
             exports: 'Handlebars'
         },
         quicksearch: {
+            deps: [
+                'jquery'
+            ]
+        },
+        jeditable: {
             deps: [
                 'jquery'
             ]
