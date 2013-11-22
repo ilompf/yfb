@@ -73,6 +73,29 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
                 }
             }
         }).disableSelection();
+
+        // handle removal
+        $('.pose-list').on({
+            mouseenter: function (event) {
+                var btn = $('<div class="icn-remove"><i class="glyphicon glyphicon-remove"></i></div>');
+                $(this).append(btn);
+            },
+            mouseleave: function (event) {
+                $('.icn-remove', this). remove();
+            }
+        }, 'li');
+
+        $('.pose-list').on({
+            click: function (event) {
+                var $list = $(this).getParent(2);
+                $(this).parent().fadeOut(function () {
+                    // if our element is the last one, then show the prompt
+                    if ($list.children('li').length < 1) {
+                        $('.drop-here-prompt', $list).fadeIn();
+                    }
+                }).remove();
+            }
+        }, '.icn-remove');
     }
 
 
