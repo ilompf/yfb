@@ -44,8 +44,8 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
         }).disableSelection();
 
         // section sortable
-        $('.pose-list').sortable({
-            items: '>li',
+        var $poseLlist = $('.pose-list').sortable({
+            items: 'li',
             placeholder: 'sortable-placeholder',
             forcePlaceholderSize: true,
             connectWith: '.pose-list',
@@ -73,6 +73,10 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
                 }
             }
         }).disableSelection();
+
+        // hack to make jquery sortable work with horizontal lists
+        $poseList.data('sortable').floating = true;
+        $poseList.data('uiSortable').floating = true;
 
         // handle removal
         $('.pose-list').on({

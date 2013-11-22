@@ -273,6 +273,7 @@ footer {
 /* draggables and sortables always have to be on top */
 .ui-draggable-dragging,
 .ui-sortable-helper {
-    z-index: 1000;
+    padding: 0;
+    margin: 0;
 }
 
