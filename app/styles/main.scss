@@ -209,9 +209,23 @@ nav {
             width: 120px;
             height: 120px;
             overflow: hidden;
+            position: relative;
 
             &.sortable-placeholder {
                 border: 2px dashed #ccc;
+            }
+
+            &:hover {
+                border: 1px solid black;
+            }
+
+            .icn-remove {
+                color: white;
+                background-color: black;
+                position: absolute;
+                top: 0;
+                right: 0;
+                cursor: pointer;
             }
         }
 
