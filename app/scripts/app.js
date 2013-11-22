@@ -104,7 +104,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
     }
 
     function initIndex() {
-        var $myFlow = $('#nav-links a[href$="#my-flows"]');
+        var $myFlows = $('#nav-links a[href$="#my-flows"]');
 
         $('.aflow-tools, .toolbar').on({
             'click': function (event) {
@@ -112,7 +112,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
                 var $target = $(event.currentTarget),
                     alink = $target.attr('href');
                 render(alink, '#content', {});
-                $myFlow.parent().removeClass('active');
+                $myFlows.parent().removeClass('active');
                 initBuilder();
             }
         }, 'a');
