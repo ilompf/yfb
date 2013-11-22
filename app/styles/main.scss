@@ -102,6 +102,9 @@ nav {
 }
 
 .pose-picker {
+    @extend .navbar-fixed-top;
+    margin-top: 51px;
+
     background: #999 url(../images/low_contrast_linen.png) repeat-x;
     padding-bottom: 5px;
     box-shadow: 0 8px 5px -6px #444;
@@ -180,7 +183,7 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.03);
 
     &:first-child {
-        margin-top: 30px;
+        margin-top: 220px;
     }
 
     .pose-list {
