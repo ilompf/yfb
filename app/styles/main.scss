@@ -22,6 +22,8 @@ nav {
 .toolbar {
     @extend .well;
     @extend .well-sm;
+
+    margin-top: 10px;
 }
 
 .aflow {

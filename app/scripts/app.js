@@ -104,15 +104,13 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
     }
 
     function initIndex() {
-        var $flowTools = $('.aflow-tools');
-
-        // flow tools
-        $flowTools.on({
+        $('.aflow-tools, .toolbar').on({
             'click': function (event) {
                 event.preventDefault();
                 var $target = $(event.currentTarget),
                     alink = $target.attr('href');
                 render(alink, '#content', {});
+                initBuilder();
             }
         }, 'a');
 
