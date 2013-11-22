@@ -1,5 +1,5 @@
 /*global define */
-define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch'], function ($, ui, Handlebars, quicksearch) {
+define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], function ($, ui, Handlebars, quicksearch, jeditable) {
     'use strict';
 
     // little plugin to get nested parents
@@ -21,8 +21,22 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch'], function ($, ui, Ha
         $(destId).html(template);
     }
 
+    function makeEditable(selector) {
+        $(selector).editable(function(value, settings) {
+                return(value);
+            }, {
+            indicator : '<img src="img/indicator.gif">',
+            tooltip   : 'Doubleclick to edit',
+            event     : 'dblclick',
+            style     : 'inherit',
+        });
+    }
+
     function bindAll() {
-        $( '.searchbox input' ).quicksearch( '.pose-picker-archive li' );
+        $('.searchbox input').quicksearch('.pose-picker-archive li');
+
+        makeEditable('.section-title p');
+        makeEditable('.aflow-description p')
 
         $('.canvas').sortable({
             items: '>ul',
@@ -82,7 +96,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch'], function ($, ui, Ha
 
         $('.aflow-tools').on({
             'click': function (event) {
-                var $target = $( event.currentTarget ),
+                var $target = $(event.currentTarget),
                     alink = $target.attr('href');
                 event.preventDefault();
                 render(alink, '#content', {});
