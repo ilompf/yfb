@@ -104,24 +104,29 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
     }
 
     function initIndex() {
+        var $myFlow = $('#nav-links a[href$="#my-flows"]');
+
         $('.aflow-tools, .toolbar').on({
             'click': function (event) {
                 event.preventDefault();
                 var $target = $(event.currentTarget),
                     alink = $target.attr('href');
                 render(alink, '#content', {});
+                $myFlow.parent().removeClass('active');
                 initBuilder();
             }
         }, 'a');
 
         // Misc
-        makeEditable('.aflow-description p')
+        makeEditable('.aflow-description p');
     }
 
     function init() {
-        var $nav = $('#nav-links');
+        var $nav = $('#nav-links'),
+            $defaultActive = $('#nav-links a[href$="#my-flows"]');
 
         // Navigation events
+        $defaultActive.parent().addClass('active');
         $nav.on({
             'click': function (event) {
                 var $target = $(event.currentTarget),
