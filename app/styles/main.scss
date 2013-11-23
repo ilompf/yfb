@@ -205,9 +205,11 @@ nav {
         }
 
         li {
-            margin: 10px 20px;
-            width: 120px;
-            height: 120px;
+            margin: 10px 15px;
+            padding: 3px;
+            border: 1px solid #fff;
+            width: 130px;
+            height: 130px;
             overflow: hidden;
             position: relative;
 
@@ -215,17 +217,21 @@ nav {
                 border: 2px dashed #ccc;
             }
 
-            &:hover {
-                border: 1px solid black;
-            }
-
             .icn-remove {
-                color: white;
-                background-color: black;
+                color: #696969;
                 position: absolute;
                 top: 0;
                 right: 0;
                 cursor: pointer;
+            }
+
+            p {
+                @extend .hide;
+            }
+
+            &:hover {
+                border: 1px solid #CCC;
+                border-radius: 4px;
             }
         }
 
@@ -233,6 +239,7 @@ nav {
             width: 120px;
             height: 120px;
         }
+
     }
 
     .section-toolbar {
