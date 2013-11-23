@@ -74,6 +74,8 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
             }
         }).disableSelection();
 
+        makeEditable('.section-title p');
+
         // hack to make jquery sortable work with horizontal lists
         //$poseList.data('sortable').floating = true;
         //$poseList.data('uiSortable').floating = true;
