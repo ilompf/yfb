@@ -35,6 +35,12 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
         });
     }
 
+    function print(e) {
+        if (e.preventDefault) e.preventDefault();
+        window.print();
+        return false;
+    }
+
     function initPosesSectionsDragDrop() {
         // pose archive
         $('.pose-picker-archive li').draggable({
@@ -106,6 +112,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
 
 
     function initBuilder() {
+
         // add a default section
         $($('#empty-section').html()).insertBefore('.page-toolbar');
 
@@ -136,6 +143,9 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
                 initPosesSectionsDragDrop();
             }
         }, 'a');
+
+        // handle nav icon events
+        $('#builder-links').on('click', '[href$="#print"]', print);
 
         // misc
         $('.searchbox input').quicksearch('.pose-picker-archive li');

@@ -11,7 +11,8 @@
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" media="all" href="styles/main.css">
+        <link rel="stylesheet" media="print" href="styles/print.css" />
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -126,10 +127,17 @@
 <script id="flow-builder" type="text/x-handlebars-template">
     <div class="pose-picker">
         <div class="pose-picker-toolbar">
-            <div class="searchbox">
+            <div class="searchbox navbar-nav">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
                 <input type="text" class="form-control" placeholder="Name of the pose">
             </div>
+
+            <ul id="builder-links" class="nav navbar-nav navbar-right">
+                <li><a href="#share" class="save"><i class="glyphicon glyphicon-share"></a></i>
+                <li><a href="#print" class="save"><i class="glyphicon glyphicon-print"></a></i>
+                <li><a href="#save" class="save"><i class="glyphicon glyphicon-floppy-saved"></i></a></li>
+                <li><a href="#remove" class="save"><i class="glyphicon glyphicon-remove"></a></i>
+            </ul>
         </div>
 
         <ul class="pose-picker-archive">

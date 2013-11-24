@@ -118,6 +118,18 @@ nav {
             @extend .input-group;
             width: 300px;
         }
+
+        .save {
+            color: #999;
+            padding: 6px 7px 4px 7px;
+            border-radius: 4px;
+            margin: 0 5px;
+
+        &:hover {
+            background-color: #0f0f0f;
+        }
+        }
+
     }
     .pose-picker-archive {
         @extend .container;

@@ -1,0 +1,59 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+body {
+    background: white;
+    font-size: 12pt;
+    margin: 10pt 0;
+    padding: 0;
+}
+
+head,
+nav,
+.pose-picker,
+.page-toolbar,
+.section-options,
+footer {
+    display: none;
+}
+
+body,
+.section:first-child {
+    margin-top: 0;
+}
+
+.section {
+    border-width: 0;
+}
+
+.section-toolbar,
+.section-title,
+.pose-list,
+.pose-list li {
+    padding: 0;
+    margin: 0;
+}
+
+.section .pose-list img,
+.section .pose-list li {
+    width: 60px;
+    height: 60px;
+    margin: 3px;
+    padding: 0;
+}
+
+.canvas {
+    width: 90%;
+    margin: 0 auto;
+    clear: both;
+    padding-top: 0;
+}
+
+.container {
+    width: 100%;
+    float: none;
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
