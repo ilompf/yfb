@@ -1,5 +1,5 @@
 /*global define*/
-define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], function ($, ui, Handlebars, quicksearch, jeditable) {
+define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable', 'bootstrapDropdown'], function ($, ui, Handlebars, quicksearch, jeditable, bootstrapDropdown) {
     'use strict';
 
     // little plugin to get nested parents
@@ -110,8 +110,14 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'jeditable'], functi
         }, '.icn-remove');
     }
 
-
     function initBuilder() {
+        //make toolbar selectors work
+        $('.dropdown-menu li a').click(function (e) {
+            var newHeading = $(this).text();
+            var $heading = $(this).getParent(3).children(":first");
+            var $caret = $('.caret', $heading);
+            $heading.html(newHeading);
+        });
 
         // add a default section
         $($('#empty-section').html()).insertBefore('.page-toolbar');
