@@ -114,9 +114,19 @@ nav {
         @extend .container;
         padding: 10px 0;
 
+        .btn-toolbar {
+            float: left;
+        }
+
         .searchbox {
             @extend .input-group;
             width: 300px;
+            padding-right: 5px;
+        }
+
+        .span1 {
+            width: 140px;
+            text-align: left;
         }
 
         .save {

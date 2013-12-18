@@ -127,9 +127,47 @@
 <script id="flow-builder" type="text/x-handlebars-template">
     <div class="pose-picker">
         <div class="pose-picker-toolbar">
-            <div class="searchbox navbar-nav">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                <input type="text" class="form-control" placeholder="Name of the pose">
+            <div class="btn-toolbar">
+
+                <div class="searchbox navbar-nav">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Name of the pose">
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="span1 btn btn-default" data-toggle="dropdown">Category</button>
+
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">All Categories</a></li>
+                        <li><a href="#">Standing</a></li>
+                        <li><a href="#">Seated</a></li>
+                        <li><a href="#">Inverted</a></li>
+                        <li><a href="#">Prone</a></li>
+                    </ul>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="span1 btn btn-default">Subcategory</button>
+
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">All Subcategories</a></li>
+                        <li><a href="#">Twists</a></li>
+                        <li><a href="#">Forward Bends</a></li>
+                        <li><a href="#">Backward Bends</a></li>
+                        <li><a href="#">Balances</a></li>
+                    </ul>
+                </div>
+
             </div>
 
             <ul id="builder-links" class="nav navbar-nav navbar-right">
