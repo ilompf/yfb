@@ -1,0 +1,31 @@
+/* wrap grid content in containing el with padding: 0 15px; */
+
+
+.my-fluid-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.upper {
+    background-image: url('../images/yoga.png');
+    height: 510px;
+
+}
+
+.pitch-box {
+        background: rgba(0, 0, 0, 0.4);
+        height: 430px;
+        width: 840px;
+        border-radius: 15px;
+        margin: 40px 226.50px;
+
+}
+
+.brand, .pitch, .subpitch {
+    text-align: center;
+    color: #ffffff;
+    font-family: lucida sans unicode,lucida grande,sans-serif;
+    text-shadow: 1px 1px 1px #000;
+}
