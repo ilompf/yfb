@@ -4,25 +4,33 @@
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 542px;
-    max-height: 542px;
+    height: 500px;
+    max-height: 500px;
 }
 
 .jumbotron > .container {
-    background-color: rgba(0,0,0, 0.1);
-    padding:60px 15px;
+    background-color: rgba(0,0,0, 0.3);
+    padding: 60px 15px;
+    border-radius: 10px;
+    max-height: 410px;
+    max-width: 940px;
+}
+
+.container {
+    max-width: 940px;
 }
 
 h1 {
     margin: 0 0 60px 0;
 }
 
-h2 {
+h2, h3 {
     margin-top: 0px;
 }
 
-.row h2 {
+.row h3 {
     text-transform: capitalize;
+    color: #A7B747;
 }
 
 @media (max-width: 768px) {
