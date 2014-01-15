@@ -16,3 +16,8 @@
 h1 {
     margin-bottom: 60px;
 }
+
+.row h2 {
+    text-transform: capitalize;
+}
+
