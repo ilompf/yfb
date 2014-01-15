@@ -14,10 +14,25 @@
 }
 
 h1 {
-    margin-bottom: 60px;
+    margin: 0 0 60px 0;
+}
+
+h2 {
+    margin-top: 0px;
 }
 
 .row h2 {
     text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        margin: 0 0 30px 0;
+    }
+
+    .jumbotron > .container {
+        background-color: rgba(0,0,0, 0.1);
+        padding: 30px 15px;
+    }
 }
 
