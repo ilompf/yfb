@@ -1,12 +1,3 @@
-node_modules
-dist
-
 .*
 !.gitignore
-!.bowerrc
-!.gitattributes
-!.jshintrc
-!.editorconfig
-
-app/bower_components
 
