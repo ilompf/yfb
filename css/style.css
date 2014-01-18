@@ -1,8 +1,8 @@
 
 .jumbotron {
-    /*background-image: url(../images/yoga.png);
+    background-image: url(../images/yogablur.png);
     background-position: 50%;
-    background-repeat: no-repeat;*/
+    background-repeat: no-repeat;
     background-color: white;
     background-size: cover;
     height: 500px;
@@ -18,10 +18,6 @@
     max-width: 800px;
 }
 
-.jumbotron > .container > p {
-    padding: 0 40px;
-}
-
 .container {
     max-width: 940px;
 }
@@ -32,7 +28,7 @@ img {
 }
 
 h1 {
-    margin: 10px 0 20px 0;
+    margin: 30px 0 20px 0;
     color: #7A4533 !important;
     font-family: 'Open Sans', sans-serif;
     font-size: 55px !important;
