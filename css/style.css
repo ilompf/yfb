@@ -1,36 +1,57 @@
 
 .jumbotron {
-    background-image: url(../images/yoga.png);
+    /*background-image: url(../images/yoga.png);
     background-position: 50%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+    background-color: white;
     background-size: cover;
     height: 500px;
     max-height: 500px;
 }
 
 .jumbotron > .container {
-    background-color: rgba(0,0,0, 0.3);
+    /*background-color: rgba(0,0,0, 0.3);
     padding: 60px 15px;
     border-radius: 10px;
+    */
     max-height: 410px;
-    max-width: 940px;
+    max-width: 800px;
 }
 
 .container {
     max-width: 940px;
 }
 
+img {
+  width: 110px;
+
+}
+
 h1 {
-    margin: 0 0 60px 0;
+    margin: 10px 0 20px 0;
+    color: #7A4533 !important;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h2, h3 {
     margin-top: 0px;
+    color: #7A4533;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .row h3 {
     text-transform: capitalize;
-    color: #A7B747;
+    color: #7A4533;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    padding: 0 40px;
+}
+
+footer {
+  margin: 40px 0 0 0;
 }
 
 @media (max-width: 768px) {
@@ -38,9 +59,9 @@ h2, h3 {
         margin: 0 0 30px 0;
     }
 
-    .jumbotron > .container {
+    /*.jumbotron > .container {
         background-color: rgba(0,0,0, 0.1);
         padding: 30px 15px;
-    }
+    }*/
 }
 
