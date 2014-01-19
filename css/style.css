@@ -1,9 +1,10 @@
 
 .jumbotron {
-    background-image: url(../images/yogablur.png);
+    /*background-image: url(../images/yogablur.png);
     background-position: 50%;
     background-repeat: no-repeat;
-    background-color: white;
+    */
+    background-color: #E4E0D4;
     background-size: cover;
     height: 500px;
     max-height: 500px;
@@ -34,7 +35,7 @@ h1 {
     font-size: 55px !important;
 }
 
-h2, h3 {
+h3 {
     margin-top: 0px;
     color: #7A4533;
     font-family: 'Open Sans', sans-serif;
@@ -44,6 +45,12 @@ h2, h3 {
     text-transform: capitalize;
     color: #7A4533;
     font-family: 'Open Sans', sans-serif;
+    margin: 0 0 20px 0;
+}
+
+.button {
+    background-color: #DA461D;
+    color: white;
 }
 
 p {
@@ -60,8 +67,25 @@ footer {
 }
 
 @media (max-width: 768px) {
+    img {
+      width: 70px;
+    }
+
     h1 {
-        margin: 0 0 30px 0;
+        font-size: 30px !important;
+        margin: 15px 0 15px 0;
+    }
+
+    .lead {
+        margin-bottom: 10px;
+    }
+
+    .row h3 {
+      margin-bottom: 15px;
+    }
+
+    .description {
+      margin-bottom: 30px;
     }
 
     /*.jumbotron > .container {
