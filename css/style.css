@@ -6,8 +6,8 @@
     */
     background-color: #E4E0D4;
     background-size: cover;
-    height: 500px;
-    max-height: 500px;
+    padding: 70px 0;
+    margin-bottom: 70px;
 }
 
 .jumbotron > .container {
@@ -15,7 +15,6 @@
     padding: 60px 15px;
     border-radius: 10px;
     */
-    max-height: 410px;
     max-width: 800px;
 }
 
