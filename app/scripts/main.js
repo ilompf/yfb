@@ -18,7 +18,7 @@ require.config({
         'sass-bootstrap': '../bower_components/sass-bootstrap/dist/js/bootstrap',
         'jquery-ui': '../bower_components/jquery-ui/ui/jquery-ui',
         quicksearch: '../bower_components/quicksearch/jquery.quicksearch',
-        jeditable: '../bower_components/jquery_jeditable/jquery.jeditable'
+//        jeditable: '../bower_components/jquery_jeditable/jquery.jeditable'
     },
     shim: {
         handlebars: {
@@ -29,11 +29,11 @@ require.config({
                 'jquery'
             ]
         },
-        jeditable: {
-            deps: [
-                'jquery'
-            ]
-        },
+//       jeditable: {
+//            deps: [
+//                'jquery'
+//            ]
+//        },
         bootstrapAffix: {
             deps: [
                 'jquery'

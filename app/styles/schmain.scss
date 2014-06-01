@@ -26,25 +26,80 @@ nav {
     margin-top: 10px;
 }
 
-.navbar-header {
-    float: left;
-    display: inline-block;
+.aflow {
+    @include clearfix();
+    @extend .well;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+
+    // cool grayscale effect on hover
+    filter: grayscale(1);
+    &:hover {
+        filter: grayscale(0);
+    }
+
+    .aflow-name {
+        position: absolute;
+        display: block;
+        width: 480px;
+        z-index: 9999;
+        margin: 0;
+        opacity: 0.8;
+        font-size: 18px;
+        line-height: 120px;
+
+        span {
+            padding: 20px 30px;
+            max-width: 400px;
+            background-color: #b0c4d3;
+        }
+    }
+
+    .aflow-description {
+        position: absolute;
+        float: left !important;
+        margin-left: 520px;
+        height: 120px;
+        text-align: left;
+
+        h2 {
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+
+            margin-bottom: 20px;
+        }
+    }
+
+    .aflow-preview {
+        @include clearfix();
+        @extend .list-unstyled;
+
+        width: 480px;
+        margin: 0;
+        padding: 0;
+        float: left !important;
+
+        li {
+            float: left !important;
+            display: block;
+            width: 120px;
+            height: 120px;
+            margin: 0;
+            padding: 0;
+
+            img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+
+    .aflow-tools {
+        margin-top: 20px;
+    }
 }
-
-    .brand {
-        float: left;
-    }
-
-    .searchbox {
-        float: left;
-        @extend .input-group;
-        width: 300px;
-        padding-right: 5px;
-    }
-
-    .navigation {
-        float: right;
-    }
 
 .pose-picker {
     @extend .navbar-fixed-top;
@@ -55,7 +110,37 @@ nav {
     box-shadow: 0 8px 5px -6px #444;
     border-bottom: 1px solid #000;
 
+    .pose-picker-toolbar {
+        @extend .container;
+        padding: 10px 0;
 
+        .btn-toolbar {
+            float: left;
+        }
+
+        .searchbox {
+            @extend .input-group;
+            width: 300px;
+            padding-right: 5px;
+        }
+
+        .span1 {
+            width: 140px;
+            text-align: left;
+        }
+
+        .save {
+            color: #999;
+            padding: 6px 7px 4px 7px;
+            border-radius: 4px;
+            margin: 0 5px;
+
+        &:hover {
+            background-color: #0f0f0f;
+        }
+        }
+
+    }
     .pose-picker-archive {
         @extend .container;
         @extend .list-unstyled;
@@ -105,9 +190,9 @@ nav {
     @include make-md-column(10);
     @include make-md-column-offset(1);
 
-    min-height: 400px;
+    min-height: 150px;
 
-    margin: 170px 0 0 0;
+    margin: 20px 0 0 0;
     padding: 0;
 
     // simulate page look
@@ -120,7 +205,7 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.03);
 
     &:first-child {
-        margin-top: 170px;
+        margin-top: 220px;
     }
 
     .pose-list {
@@ -179,6 +264,37 @@ nav {
 
     }
 
+    .section-toolbar {
+        @include clearfix();
+        @extend .text-right;
+
+        padding: 10px;
+        margin: 0;
+
+        .section-title {
+            @extend .pull-left;
+
+            p {
+                background-color: #CCC;
+                border-radius: 4px;
+                padding: 10px;
+            }
+        }
+
+        .section-options {
+            @extend .pull-right;
+        }
+    }
+}
+
+.page-toolbar {
+    @include make-md-column(10);
+    @include make-md-column-offset(1);
+
+    @extend .well;
+    @extend .well-sm;
+
+    margin-top: 20px;
 }
 
 footer {
