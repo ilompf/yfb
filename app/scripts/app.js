@@ -9,31 +9,85 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown']
             "id": 1,
             "image": "http://truestar.com/yoga/jpg-big/HappyBaby-Pose.jpg",
             "tooltip": "Happy Baby",
-            "text": "Ananda Balasana Happy Baby Supine Hips Groins"
+            "text": "Ananda Balasana Happy Baby Pose Supine Hips Groins"
         },
         {
             "id": 2,
             "image": "http://truestar.com/yoga/jpg-big/Table-Pose.jpg",
             "tooltip": "Table",
-            "text": "Svaasana Table Standing Twist Meditative"
+            "text": "Svaasana Table Pose Standing Twist Meditative"
         },
         {
             "id": 3,
             "image": "http://truestar.com/yoga/jpg-big/Cat-Pose.jpg",
             "tooltip": "Cat",
-            "text": "Marjaryasana Cat Back"
+            "text": "Marjaryasana Cat Pose Back"
         },
         {
             "id": 4,
             "image": "http://truestar.com/yoga/jpg-big/Cow-Pose.jpg",
             "tooltip": "Cow",
-            "text": "Bitilasana Cow Back"
+            "text": "Bitilasana Cow Pose Back"
         },
         {
             "id": 5,
             "image": "http://truestar.com/yoga/jpg-big/HalfBow-Pose.jpg",
             "tooltip": "Half Bow",
-            "text": "Ardha Dhanurasana Half Bow Back"
+            "text": "Ardha Dhanurasana Half Bow Pose Back"
+        },
+        {
+            "id": 6,
+            "image": "http://truestar.com/yoga/jpg-big/SidePlank-Pose.jpg",
+            "tooltip": "Side Plank",
+            "text": "Side Plank Pose Vasisthasana Balance"
+        },
+        {
+            "id": 7,
+            "image": "http://truestar.com/yoga/jpg-big/Dolphin-Pose.jpg",
+            "tooltip": "Dolphin",
+            "text": "Dolphin Pose Makarasana"
+        },
+        {
+            "id": 8,
+            "image": "http://truestar.com/yoga/jpg-big/Camel-Pose.jpg",
+            "tooltip": "Camel",
+            "text": "Camel Pose Ustrasana Backbend"
+        },
+        {
+            "id": 9,
+            "image": "http://truestar.com/yoga/jpg-big/Rabbit-Pose.jpg",
+            "tooltip": "Rabbit",
+            "text": "Rabbit Pose Sasangasana"
+        },
+        {
+            "id": 10,
+            "image": "http://truestar.com/yoga/jpg-big/Hero-Pose.jpg",
+            "tooltip": "Hero",
+            "text": "Hero Pose Virasana Sitting"
+        },
+        {
+            "id": 11,
+            "image": "http://truestar.com/yoga/jpg-big/Cobra-Pose.jpg",
+            "tooltip": "Cobra",
+            "text": "Cobra Pose Bhujangasana Backbend"
+        },
+        {
+            "id": 12,
+            "image": "http://truestar.com/yoga/jpg-big/Sphinx-Pose.jpg",
+            "tooltip": "Sphinx",
+            "text": "Sphinx Pose Salamba Bhujangasana Backbend"
+        },
+        {
+            "id": 13,
+            "image": "http://truestar.com/yoga/jpg-big/Fish-Pose.jpg",
+            "tooltip": "Fish",
+            "text": "Fish Pose Matsyasana Backbend"
+        },
+        {
+            "id": 14,
+            "image": "http://truestar.com/yoga/jpg-big/Bridge-Pose.jpg",
+            "tooltip": "Bridge",
+            "text": "Bridge Pose Setu Bandha Sarvangasana"
         },
 
     ];
