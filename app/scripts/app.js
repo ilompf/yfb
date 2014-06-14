@@ -114,6 +114,11 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown']
         $(destId).html(template);
     }
 
+    function print(e) {
+        if (e.preventDefault) e.preventDefault();
+        window.print();
+        return false;
+    }
 
     // enable building of pose list with drag & drop, removal of poses
     function initDragDrop() {
@@ -174,6 +179,8 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown']
 
         // activate search
         $('.searchbox input').quicksearch('.pose-picker-archive li');
+
+        $('#social').on('click', '[href$="#print"]', print);
 
     }
 
