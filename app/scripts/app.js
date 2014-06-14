@@ -2,7 +2,6 @@
 define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown', 'share-button'], function ($, ui, Handlebars, quicksearch, bootstrapDropdown, Share) {
     'use strict';
 
-
     //poses archive
     var archive = [
         {
@@ -93,7 +92,6 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
     ];
 
 
-
     // little plugin to get nested parents (for handling of pose removal)
     $.fn.getParent = function (num) {
         var last = this[0];
@@ -120,16 +118,18 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
         window.print();
         return false;
     }
-
+    
     // sharing functionality
-
     var share = new Share('.share-button', {
         ui: {
             flyout: 'bottom center'
         }
     });
 
-    // enable building of pose list with drag & drop, removal of poses
+    /**
+     * Enable building of pose list with drag & drop,
+     * removal of poses.
+     */
     function initDragDrop() {
         // pose archive draggable, drop to poselist
         $('.pose-picker-archive li').draggable({
@@ -179,9 +179,37 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
         }, '.icn-remove');
     }
 
-    function initBuilder() {
-        // add a default section
-        $($('#empty-section').html()).appendTo('.page');
+    /**
+     * Init the flow builder.
+     * @param {Array} poses
+     */
+    function initBuilder(poses) {
+        var posesData = [],
+            result,
+            source,
+            template,
+            html;
+
+        // if we have poses, transpose it into a template context
+        if (poses) {
+            $.each(poses, function(index, value) {
+                result = $.grep(archive, function(e) {
+                    if (e.id == value) {
+                        return e;
+                    }
+                });
+
+                if (result.length === 1) {
+                    posesData.push(result[0]);
+                }
+            });
+        }
+
+        // render the template
+        source = $('#empty-section').html();
+        template = Handlebars.compile(source);
+        html = template({ poses: posesData });
+        $(html).appendTo('.page');
 
         // enable building of pose list
         initDragDrop();
@@ -193,25 +221,46 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
 
     }
 
-    /*
-    generate index: id pairs
-    http://jsfiddle.net/5UJHY/
 
-
-    $( ".pose-list>li" ).each(function( index ) {
-        console.log( index + ": " + $( "img", this ).attr("id-data") );
-    });
-
-    $( ".pose-list>li" ).each(function( index ) {
-        $.param({ index: $( "img", this ).attr("id-data") );
-    });
-
+    /**
+     * Generate a deep link with a sequence.
+     * @returns {string} generated url
      */
+    function generateDeepLink() {
+        var arr = [];
+        $('.pose-list li').each(function(index) {
+            arr.push($(this).attr("id-data"));
+        });
+        return 'http://127.0.0.1:9000/poses=' + encodeURIComponent(arr.join(','));
+    }
 
 
-    // default template
-    render('#flow-builder', '#content', {objects:archive});
-    initBuilder();
+    /**
+     * Retrieve a GET parameter by name.
+     * @param variable Parameter name
+     * @returns {string} GET parameter value or an empty string
+     */
+    function getQueryVariable(variable) {
+        var query = decodeURIComponent(window.location.search.substring(1));
+        var vars = query.split("&");
+
+        for(var i = 0, len = vars.length; i < len; i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable) {
+                return pair[1];
+            }
+        }
+
+        return '';
+    }
+
+    // Get URL params and render the template
+    var poses = getQueryVariable('poses');
+    var posesArray = [];
+    if (poses) posesArray = poses.split(',');
+
+    render('#flow-builder', '#content', { objects: archive });
+    initBuilder(posesArray);
 
     return 'App is on!';
 });
