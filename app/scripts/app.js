@@ -1,5 +1,5 @@
 /*global define*/
-define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown'], function ($, ui, Handlebars, quicksearch, bootstrapDropdown) {
+define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown', 'share-button'], function ($, ui, Handlebars, quicksearch, bootstrapDropdown, Share) {
     'use strict';
 
 
@@ -114,11 +114,20 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown']
         $(destId).html(template);
     }
 
+    // printing functionality
     function print(e) {
         if (e.preventDefault) e.preventDefault();
         window.print();
         return false;
     }
+
+    // sharing functionality
+
+    var share = new Share('.share-button', {
+        ui: {
+            flyout: 'bottom center'
+        }
+    });
 
     // enable building of pose list with drag & drop, removal of poses
     function initDragDrop() {
