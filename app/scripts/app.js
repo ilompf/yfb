@@ -177,6 +177,21 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown']
 
     }
 
+    /*
+    generate index: id pairs
+    http://jsfiddle.net/5UJHY/
+
+
+    $( ".pose-list>li" ).each(function( index ) {
+        console.log( index + ": " + $( "img", this ).attr("id-data") );
+    });
+
+    $( ".pose-list>li" ).each(function( index ) {
+        $.param({ index: $( "img", this ).attr("id-data") );
+    });
+
+     */
+
 
     // default template
     render('#flow-builder', '#content', {objects:archive});

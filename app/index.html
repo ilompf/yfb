@@ -59,8 +59,8 @@
     <div class="pose-picker">
         <ul class="pose-picker-archive">
             {{#each objects}}
-                <li>
-                    <img src="{{image}}" title="{{tooltip}}" id-data="{{id}}" />
+                <li id-data="{{id}}">
+                    <img src="{{image}}" title="{{tooltip}}" />
                     <p>{{text}}</p>
                 </li>
             {{/each}}
