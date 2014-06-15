@@ -75,7 +75,16 @@
 <script id="empty-section" type="text/x-handlebars-template">
     <div class="section">
         <ul class="pose-list empty">
-            <h2 class="drop-here-prompt"><span class="glyphicon glyphicon-save"></span>Drag poses here!</h2>
+            {{#if poses}}
+                {{#each poses}}
+                <li id-data="{{id}}">
+                    <img src="{{image}}" title="{{tooltip}}" />
+                    <p>{{text}}</p>
+                </li>
+                {{/each}}
+            {{else}}
+                <h2 class="drop-here-prompt"><span class="glyphicon glyphicon-save"></span>Drag poses here!</h2>
+            {{/if}}
         </ul>
     </div>
 </script>
