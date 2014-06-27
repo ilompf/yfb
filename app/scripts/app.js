@@ -7,85 +7,85 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
         {
             "id": 1,
             "image": "http://truestar.com/yoga/jpg-big/HappyBaby-Pose.jpg",
-            "tooltip": "Happy Baby",
+            "tooltip": "Ananda Balasana – Happy Baby",
             "text": "Ananda Balasana Happy Baby Pose Supine Hips Groins"
         },
         {
             "id": 2,
             "image": "http://truestar.com/yoga/jpg-big/Table-Pose.jpg",
-            "tooltip": "Table",
+            "tooltip": "Svaasana – Table",
             "text": "Svaasana Table Pose Standing Twist Meditative"
         },
         {
             "id": 3,
             "image": "http://truestar.com/yoga/jpg-big/Cat-Pose.jpg",
-            "tooltip": "Cat",
+            "tooltip": "Marjaryasana – Cat",
             "text": "Marjaryasana Cat Pose Back"
         },
         {
             "id": 4,
             "image": "http://truestar.com/yoga/jpg-big/Cow-Pose.jpg",
-            "tooltip": "Cow",
+            "tooltip": "Bitilasana – Cow",
             "text": "Bitilasana Cow Pose Back"
         },
         {
             "id": 5,
             "image": "http://truestar.com/yoga/jpg-big/HalfBow-Pose.jpg",
-            "tooltip": "Half Bow",
+            "tooltip": "Ardha Dhanurasana – Half Bow",
             "text": "Ardha Dhanurasana Half Bow Pose Back"
         },
         {
             "id": 6,
             "image": "http://truestar.com/yoga/jpg-big/SidePlank-Pose.jpg",
-            "tooltip": "Side Plank",
+            "tooltip": "Vasisthasana – Side Plank",
             "text": "Side Plank Pose Vasisthasana Balance"
         },
         {
             "id": 7,
             "image": "http://truestar.com/yoga/jpg-big/Dolphin-Pose.jpg",
-            "tooltip": "Dolphin",
+            "tooltip": "Makarasana – Dolphin",
             "text": "Dolphin Pose Makarasana"
         },
         {
             "id": 8,
             "image": "http://truestar.com/yoga/jpg-big/Camel-Pose.jpg",
-            "tooltip": "Camel",
+            "tooltip": "Ustrasana – Camel",
             "text": "Camel Pose Ustrasana Backbend"
         },
         {
             "id": 9,
             "image": "http://truestar.com/yoga/jpg-big/Rabbit-Pose.jpg",
-            "tooltip": "Rabbit",
+            "tooltip": "Sasangasana – Rabbit",
             "text": "Rabbit Pose Sasangasana"
         },
         {
             "id": 10,
             "image": "http://truestar.com/yoga/jpg-big/Hero-Pose.jpg",
-            "tooltip": "Hero",
+            "tooltip": "Virasana – Hero",
             "text": "Hero Pose Virasana Sitting"
         },
         {
             "id": 11,
             "image": "http://truestar.com/yoga/jpg-big/Cobra-Pose.jpg",
-            "tooltip": "Cobra",
+            "tooltip": "Bhujangasana – Cobra",
             "text": "Cobra Pose Bhujangasana Backbend"
         },
         {
             "id": 12,
             "image": "http://truestar.com/yoga/jpg-big/Sphinx-Pose.jpg",
-            "tooltip": "Sphinx",
+            "tooltip": "Salamba Bhujangasana – Sphinx",
             "text": "Sphinx Pose Salamba Bhujangasana Backbend"
         },
         {
             "id": 13,
             "image": "http://truestar.com/yoga/jpg-big/Fish-Pose.jpg",
-            "tooltip": "Fish",
+            "tooltip": "Matsyasana – Fish",
             "text": "Fish Pose Matsyasana Backbend"
         },
         {
             "id": 14,
             "image": "http://truestar.com/yoga/jpg-big/Bridge-Pose.jpg",
-            "tooltip": "Bridge",
+            "tooltip": "Setu Bandha Sarvangasana – Bridge",
             "text": "Bridge Pose Setu Bandha Sarvangasana"
         },
 
@@ -118,13 +118,9 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
         window.print();
         return false;
     }
-    
-    // sharing functionality
-    var share = new Share('.share-button', {
-        ui: {
-            flyout: 'bottom center'
-        }
-    });
+
+
+
 
     /**
      * Enable building of pose list with drag & drop,
@@ -190,7 +186,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
             template,
             html;
 
-        // if we have poses, transpose it into a template context
+        // if we have poses, transpose them into the template context
         if (poses) {
             $.each(poses, function(index, value) {
                 result = $.grep(archive, function(e) {
@@ -221,6 +217,21 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
 
     }
 
+     /**
+     * Get the source of the first image of a sequence.
+     * @returns {string} src url
+     */
+    function getImageSource() {
+        var first_sequence_image = $('#content > div.page > div > ul > li > img').attr('src'),
+            first_archive_image = $('#content > div.pose-picker > ul > li:nth-child(1) > img').attr('src');
+
+        if (first_sequence_image) {
+            return first_sequence_image
+        } else {
+            return first_archive_image
+        }
+    }
+
 
     /**
      * Generate a deep link with a sequence.
@@ -231,9 +242,63 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
         $('.pose-list li').each(function(index) {
             arr.push($(this).attr("id-data"));
         });
-        return 'http://127.0.0.1:9000/poses=' + encodeURIComponent(arr.join(','));
+        return 'http://127.0.0.1:9000/?poses=' + encodeURIComponent(arr.join(','));
     }
 
+       // sharing functionality
+    var share = new Share('.share-button', {
+        ui: {
+            flyout: 'middle right',
+            button_font: false,
+        },
+        networks: {
+            pinterest: {
+                description: 'Check out my awesome Yoga Sequence on yogaflowbuilder.com!',
+                before: function(element) {
+                    this.url = generateDeepLink();
+                    this.image = getImageSource();
+                },
+                after: function() {
+                    console.log("User shared on Pinterest:", this.url);
+                },
+            },
+            twitter: {
+                description: 'Check out my awesome Yoga Sequence on yogaflowbuilder.com!',
+                before: function(element) {
+                    this.url = generateDeepLink();
+                },
+                after: function() {
+                    console.log("User shared on Twitter:", this.url);
+                },
+            },
+            facebook: {
+                //app_id: '1500779413473492',
+                title: 'Check out my awesome Yoga Sequence on yogaflowbuilder.com!',
+                caption: 'yogaflowbuilder.com',
+                description: "Building Yoga Flows has never been so easy! Quickly put together the craziest yoga sequences using the Flow Builder's sleek and intuitive interface. Build on other yogis' ideas or develop entirely new ones!",
+                before: function(element) {
+                    this.url = generateDeepLink();
+                    this.image = getImageSource();
+                },
+                after: function() {
+                    console.log("User shared on Facebook:", this.url);
+                },
+            },
+            google_plus: {
+                before: function(element) {
+                    this.url = generateDeepLink();
+                },
+                after: function() {
+                    console.log("User shared on Google+:", this.url);
+                },
+            },
+            email: {
+                title: 'Check out my awesome Yoga Sequence!',
+                description:
+                    "Hello!\n\nCheck out my awesome Yoga Sequence on " + generateDeepLink() + "\n\nPrint it out, share it on or make it your own by dragging and dropping new Poses onto the canvas.\n\nIt's easy as pie and just as addictive!"
+            }
+        }
+    });
 
     /**
      * Retrieve a GET parameter by name.
