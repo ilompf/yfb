@@ -242,7 +242,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
         $('.pose-list li').each(function(index) {
             arr.push($(this).attr("id-data"));
         });
-        return 'http://127.0.0.1:9000/?poses=' + encodeURIComponent(arr.join(','));
+        return window.location.href + '?poses=' + encodeURIComponent(arr.join(','));
     }
 
        // sharing functionality
@@ -258,17 +258,11 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
                     this.url = generateDeepLink();
                     this.image = getImageSource();
                 },
-                after: function() {
-                    console.log("User shared on Pinterest:", this.url);
-                },
             },
             twitter: {
                 description: 'Check out my awesome Yoga Sequence on yogaflowbuilder.com!',
                 before: function(element) {
                     this.url = generateDeepLink();
-                },
-                after: function() {
-                    console.log("User shared on Twitter:", this.url);
                 },
             },
             facebook: {
@@ -280,16 +274,10 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
                     this.url = generateDeepLink();
                     this.image = getImageSource();
                 },
-                after: function() {
-                    console.log("User shared on Facebook:", this.url);
-                },
             },
             google_plus: {
                 before: function(element) {
                     this.url = generateDeepLink();
-                },
-                after: function() {
-                    console.log("User shared on Google+:", this.url);
                 },
             },
             email: {
