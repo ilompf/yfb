@@ -42,6 +42,39 @@ nav {
         padding-right: 5px;
     }
 
+    .glyphicon-print span, .share-button.sharer-0 label span {
+        padding-left: 6px !important;
+        font-weight: bold !important;
+        text-transform: uppercase !important;
+    }
+
+    // Main button, icon, and text styles
+.share-button.sharer-0 label, i .glyphicon-print {
+  -webkit-transition: none !important;
+  transition:         none !important;
+  background: 0 !important;
+  border-radius: 0 !important;
+  color: #999 !important;
+  cursor: pointer !important;
+  display: inline !important;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  line-height: 14px;
+  margin: auto !important;
+  padding: auto !important;
+  text-align: left;
+  width: auto;
+}
+
+
+// Main button, icon, and text styles upon hover
+.share-button.sharer-0 label:hover {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+
     .navigation {
         float: right;
     }
@@ -54,6 +87,7 @@ nav {
     padding-bottom: 5px;
     box-shadow: 0 8px 5px -6px #444;
     border-bottom: 1px solid #000;
+    z-index: 1000;
 
 
     .pose-picker-archive {
