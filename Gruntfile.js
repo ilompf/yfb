@@ -13,7 +13,11 @@ module.exports = function (grunt) {
     // load all grunt tasks
     require('load-grunt-tasks')(grunt);
 
+    var pkg = require('./package.json');
+
     grunt.initConfig({
+//        pkg: grunt.file.readJSON('package.json'),
+
         // configurable paths
         yeoman: {
             app: 'app',
@@ -258,7 +262,7 @@ module.exports = function (grunt) {
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dist %>',
                     src: [
-                        '*.{ico,png,txt}',
+                        '*.{ico,png,txt,php}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
                         'styles/fonts/{,*/}*.*',
@@ -307,6 +311,21 @@ module.exports = function (grunt) {
             all: {
                 rjsConfig: '<%= yeoman.app %>/scripts/main.js'
             }
+        },
+        buildcontrol: {
+            options: {
+                dir: 'dist',
+                commit: true,
+                push: true,
+                message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+            },
+            heroku: {
+                options: {
+                    remote: 'git@heroku.com:yogaflowbuilder.git',
+                    branch: 'master',
+                    tag: pkg.version
+                }
+            }
         }
     });
 
@@ -351,5 +370,10 @@ module.exports = function (grunt) {
         'jshint',
         'test',
         'build'
+    ]);
+
+    grunt.registerTask('deploy', [
+        'build',
+        'buildcontrol:heroku'
     ]);
 };
