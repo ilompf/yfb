@@ -321,7 +321,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
             email: {
                 title: 'Check out my awesome Yoga Sequence!',
                 before: function(element) {
-                    this.description = "Hello!\r\n\nCheck out my awesome Yoga Sequence on " + generateDeepLink() + "\r\n\nPrint it out, share it on or make it your own by dragging and dropping new Poses onto the canvas.\r\n\nIt's easy as pie and just as addictive!";
+                    this.description = "Hello!%0D%0A%0D%0ACheck out my awesome Yoga Sequence on " + generateDeepLink() + "%0D%0A%0D%0APrint it out, share it on or make it your own by dragging and dropping new Poses onto the canvas.%0D%0A%0D%0AIt's easy as pie and just as addictive!";
                 },
             },
         }
