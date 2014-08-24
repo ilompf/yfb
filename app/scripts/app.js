@@ -282,9 +282,10 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
             },
             email: {
                 title: 'Check out my awesome Yoga Sequence!',
-                description:
-                    "Hello!\n\nCheck out my awesome Yoga Sequence on " + generateDeepLink() + "\n\nPrint it out, share it on or make it your own by dragging and dropping new Poses onto the canvas.\n\nIt's easy as pie and just as addictive!"
-            }
+                before: function(element) {
+                    this.description = "Hello!\r\n\nCheck out my awesome Yoga Sequence on " + generateDeepLink() + "\r\n\nPrint it out, share it on or make it your own by dragging and dropping new Poses onto the canvas.\r\n\nIt's easy as pie and just as addictive!";
+                },
+            },
         }
     });
 
