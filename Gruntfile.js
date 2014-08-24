@@ -363,7 +363,7 @@ module.exports = function (grunt) {
         'modernizr',
         'copy:dist',
         'rev',
-        'usemin'
+        'usemin',
     ]);
 
     grunt.registerTask('default', [
