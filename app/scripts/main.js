@@ -13,7 +13,7 @@ require.config({
         bootstrapTab: '../bower_components/sass-bootstrap/js/tab',
         bootstrapTooltip: '../bower_components/sass-bootstrap/js/tooltip',
         bootstrapTransition: '../bower_components/sass-bootstrap/js/transition',
-        handlebars: '../bower_components/handlebars/handlebars',
+        handlebars: '../bower_components/handlebars/handlebars.amd',
         requirejs: '../bower_components/requirejs/require',
         'sass-bootstrap': '../bower_components/sass-bootstrap/dist/js/bootstrap',
         'jquery-ui': '../bower_components/jquery-ui/ui/jquery-ui',

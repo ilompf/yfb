@@ -103,7 +103,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
 
     // handlebars template rendering
     function renderTemplate(template, context) {
-        var Template = Handlebars.compile(template);
+        var Template = Handlebars.default.compile(template);
         return Template(context);
     }
 
@@ -203,7 +203,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
 
         // render the template
         source = $('#empty-section').html();
-        template = Handlebars.compile(source);
+        template = Handlebars.default.compile(source);
         html = template({ poses: posesData });
         $(html).appendTo('.page');
 
