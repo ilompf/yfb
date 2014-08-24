@@ -4,6 +4,7 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
 
     //poses archive
     var archive = [
+        /*
         {
             "id": 1,
             "image": "http://truestar.com/yoga/jpg-big/HappyBaby-Pose.jpg",
@@ -87,6 +88,43 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
             "image": "http://truestar.com/yoga/jpg-big/Bridge-Pose.jpg",
             "tooltip": "Setu Bandha Sarvangasana – Bridge",
             "text": "Bridge Pose Setu Bandha Sarvangasana"
+        },
+        */
+        {
+            "id": 15,
+            "image": "/images/archive/IMG_4655.JPG",
+            "tooltip": "Bakasana – Crow",
+            "text": "Crow Pose Bakasana Arm Balance"
+        },
+        {
+            "id": 16,
+            "image": "/images/archive/IMG_4538.JPG",
+            "tooltip": "Ardha Baddha Padma Pachimottanasana – Half Lotus Seated Forward Fold",
+            "text": "Ardha Baddha Pachimottanasana Half Lotus Seated Forward Fold Sitting"
+        },
+        {
+            "id": 17,
+            "image": "/images/archive/IMG_4692.JPG",
+            "tooltip": "Astavakrasana Prep. – Eight Angle Prep.",
+            "text": "Astavakrasana Eight Angle Prep. Arm Balance"
+        },
+        {
+            "id": 18,
+            "image": "/images/archive/IMG_4738.JPG",
+            "tooltip": "Chaturanga Dandasana – Four Limbed Staff",
+            "text": "Chaturanga Dandasana Four Limbed Staff"
+        },
+        {
+            "id": 19,
+            "image": "/images/archive/IMG_4766.JPG",
+            "tooltip": "Anjaneyasana II – Crescent Moon / Low Lunge II",
+            "text": "Anjaneyasana II Crescent Moon Low Lunge Standing"
+        },
+         {
+            "id": 20,
+            "image": "/images/archive/IMG_4852.JPG",
+            "tooltip": "Urdhva Danurasana – Upward Bow / Wheel",
+            "text": "Urdhva Danurasana Upward Bow Wheel Backbend"
         },
 
     ];
