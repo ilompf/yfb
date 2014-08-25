@@ -31,53 +31,75 @@ nav {
     display: inline-block;
 }
 
-    .brand {
-        float: left;
-    }
-
-    .searchbox {
-        float: left;
-        @extend .input-group;
-        width: 300px;
-        padding-right: 5px;
-    }
-
-    .glyphicon-print span, .share-button.sharer-0 label span, .glyphicon-envelope span {
-        padding-left: 6px !important;
-        font-weight: bold !important;
-        text-transform: uppercase !important;
-    }
-
-    // Main button, icon, and text styles
-.share-button.sharer-0 label, i .glyphicon-print {
-  -webkit-transition: none !important;
-  transition:         none !important;
-  background: 0 !important;
-  border-radius: 0 !important;
-  color: #999 !important;
-  cursor: pointer !important;
-  display: inline !important;
-  font-size: 14px;
-  font-weight: bold;
-  height: auto;
-  line-height: 14px;
-  margin: auto !important;
-  padding: auto !important;
-  text-align: left;
-  width: auto;
+.brand {
+    float: left;
 }
 
+.searchbox {
+    float: left;
+    @extend .input-group;
+    width: 300px;
+    padding-right: 5px;
+    padding-top: 7px;
+}
+
+.glyphicon-print span, .share-button.sharer-0 label span, .glyphicon-envelope span {
+    padding-left: 6px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+}
+
+// Main button, icon, and text styles
+.share-button.sharer-0 label, i .glyphicon-print {
+    -webkit-transition: none !important;
+    transition:         none !important;
+    background: 0 !important;
+    border-radius: 0 !important;
+    color: #999 !important;
+    cursor: pointer !important;
+    display: inline !important;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    line-height: 14px;
+    margin: auto !important;
+    padding: auto !important;
+    text-align: left;
+    width: auto;
+}
 
 // Main button, icon, and text styles upon hover
 .share-button.sharer-0 label:hover {
-  color: white !important;
-  opacity: 1 !important;
+    color: white !important;
+    opacity: 1 !important;
 }
 
 
-    .navigation {
-        float: right;
+// FIX: top padding & font-family
+.share-button {
+    padding: 15px 15px !important;
+    margin: 0 !important;
+    height: 50px !important;
+    width: 100px !important;
+    label {
+        font-size: 14px !important;
+        line-height: 1 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
+
+    label span {
+        font-size: 14px !important;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    }
+}
+// -------------------------------
+
+.navigation {
+    float: right;
+}
 
 .pose-picker {
     @extend .navbar-fixed-top;
@@ -87,8 +109,6 @@ nav {
     padding-bottom: 5px;
     box-shadow: 0 8px 5px -6px #444;
     border-bottom: 1px solid #000;
-    z-index: 1000;
-
 
     .pose-picker-archive {
         @extend .container;
