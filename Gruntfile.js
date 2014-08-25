@@ -314,9 +314,9 @@ module.exports = function (grunt) {
         },
         buildcontrol: {
             options: {
-                commit: true,
-                push: true,
-                message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+                //commit: true,
+                //push: true,
+                //message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
             },
             heroku: {
                 options: {
