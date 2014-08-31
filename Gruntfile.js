@@ -323,7 +323,8 @@ module.exports = function (grunt) {
                 options: {
                     remote: 'git@heroku.com:yogaflowbuilder.git',
                     branch: 'master',
-                    tag: pkg.version
+                    tag: pkg.version,
+                    push: true
                 }
             }
         }
