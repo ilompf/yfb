@@ -92,37 +92,37 @@ define(['jquery', 'jquery-ui', 'handlebars', 'quicksearch', 'bootstrapDropdown',
         */
         {
             "id": 15,
-            "image": "../images/archive/IMG_4655.JPG",
+            "image": "../images/archive/img_4655.jpg",
             "tooltip": "Bakasana – Crow",
             "text": "Crow Pose Bakasana Arm Balance"
         },
         {
             "id": 16,
-            "image": "../images/archive/IMG_4538.JPG",
+            "image": "../images/archive/img_4538.jpg",
             "tooltip": "Ardha Baddha Padma Pachimottanasana – Half Lotus Seated Forward Fold",
             "text": "Ardha Baddha Pachimottanasana Half Lotus Seated Forward Fold Sitting"
         },
         {
             "id": 17,
-            "image": "../images/archive/IMG_4692.JPG",
+            "image": "../images/archive/img_4692.jpg",
             "tooltip": "Astavakrasana Prep. – Eight Angle Prep.",
             "text": "Astavakrasana Eight Angle Prep. Arm Balance"
         },
         {
             "id": 18,
-            "image": "../images/archive/IMG_4738.JPG",
+            "image": "../images/archive/img_4738.jpg",
             "tooltip": "Chaturanga Dandasana – Four Limbed Staff",
             "text": "Chaturanga Dandasana Four Limbed Staff"
         },
         {
             "id": 19,
-            "image": "../images/archive/IMG_4766.JPG",
+            "image": "../images/archive/img_4766.jpg",
             "tooltip": "Anjaneyasana II – Crescent Moon / Low Lunge II",
             "text": "Anjaneyasana II Crescent Moon Low Lunge Standing"
         },
          {
             "id": 20,
-            "image": "../images/archive/IMG_4852.JPG",
+            "image": "../images/archive/img_4852.jpg",
             "tooltip": "Urdhva Danurasana – Upward Bow / Wheel",
             "text": "Urdhva Danurasana Upward Bow Wheel Backbend"
         },
