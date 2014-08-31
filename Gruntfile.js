@@ -315,16 +315,15 @@ module.exports = function (grunt) {
         buildcontrol: {
             options: {
                 dir: 'dist',
-                //commit: true,
-                //push: true,
-                //message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
             },
             heroku: {
                 options: {
                     remote: 'git@heroku.com:yogaflowbuilder.git',
                     branch: 'master',
                     tag: pkg.version,
-                    push: true
+                    push: true,
+                    commit: true,
+                    message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
                 }
             }
         }
